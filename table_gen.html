@@ -7,10 +7,25 @@
 <h1></P>Photography Form</Form></h1>
 
 <form action="table_gen.php" method="get">
-    輸入帳號:<input type="text" name="row_num" value="5"/><br/>
-    輸入密碼:<input type="text" name="col_num" value="4"/><br/>
-    <input type="submit" value="提交"/>
-    <input type="reset" value="重新輸入"/>
+        <fieldset>
+            <legend>填表人資訊</legend>
+            性別: <input type="radio" name="gender" value"M" >男生
+            <input type="radio" name="gender" value="F" checked>女生
+            <input type="radio" name="gender" value="0">其他 <br/>
+            科系:
+            <select name="dept">
+                <select value="ee">電機工程系</option>
+                <option value="csie" selected>資訊工程系</option>
+                <option value="me">機械工程系</option>
+            </select><br/>
+        </fieldset>
+
+        <fieldset>輸入表格列數:<input type="text" name="row_num" value="5"/><br/>
+            輸入表格行數:<input type="text" name="col_num" value="4"/><br/>
+            <input type="submit" value="提交"/>
+            <input type="reset" value="重新輸入"/>
+        </fieldset>
+    
 </form>
 
 
