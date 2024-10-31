@@ -1,0 +1,130 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333; /* 加入顏色以保持一致性 */
+}
+
+header {
+    background: #35424a;
+    color: white;
+    padding: 20px 0; /* 將 padding 調整為一致 */
+    text-align: center;
+}
+
+nav {
+    margin: 20px 0;
+}
+
+nav a {
+    margin: 0 15px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+footer {
+    background: #35424a;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.content {
+    padding: 20px;
+    background: white;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.content h2 {
+    text-align: center;
+    color: #35424a;
+}
+
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.image-gallery img {
+    height: auto;
+    width: 100%;
+    max-width: 210px; /* 調整為一致性 */
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.05); /* 加入 hover 效果 */
+}
+
+.form-container {
+    background: #f9f9f9; /* 確保顏色一致 */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+.form-container fieldset {
+    border: none;
+}
+
+.form-container label, .form-container input[type="radio"] {
+    display: inline-block;
+    margin-right: 10px;
+    color: #333;
+}
+
+.form-container input[type="submit"], .form-container input[type="reset"] {
+    background-color: #35424a;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.form-container input[type="submit"]:hover, .form-container input[type="reset"]:hover {
+    background-color: #45565e;
+}
+
+h2 {
+    font-size: 1.6em; /* 稍微加大字體 */
+    font-weight: bold; /* 設為粗體 */
+    font-family: Arial, sans-serif; /* 設定為寬體字 */
+}
+p {
+    font-size: 1.2em; /* 字體稍微加大 */
+    font-family: Arial, sans-serif; /* 設定為寬體字 */
+}
+
+#pricing::before,
+#pricing::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    margin: 7px 0;
+}
+
+
+
+

@@ -1,9 +1,5 @@
 <?php
-
-$account = $_GET['account'];
-$password = $_GET['password'];
-$check_code = $_GET['code'];
-
-echo'帳號:' . $account .',密碼'. $password .',驗證碼' . $check_code;
-
-?>
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    $gender = htmlspecialchars($_GET['gender']);
+    $account = htmlspecialchars($_GET['account']);
+    $vehicle_type = htmlspecialchars($_GET['vehicle']);}
