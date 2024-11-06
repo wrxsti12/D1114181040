@@ -1,30 +1,46 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pinhua Photography
-    </title>
+    <title>Pinhua Photography</title>
+    <link rel="stylesheet" href="css/style.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: "Yu Gothic Light", "微軟正黑體", Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background: linear-gradient(to bottom, #fafafa, #e0e0e0); /* 漸變效果 */
+            text-align: center;
+        }
+
+        body {
+            font-family: "Yu Gothic Light", "微軟正黑體", Arial, sans-serif; /* 設定為 Yu Gothic Light */
+            margin: 0;
+            padding: 0;
+            background-color: #fafafa; /* 更淺的灰色 */
+            text-align: center;
         }
         header {
             background: #35424a;
             color: white;
             padding: 10px 0;
-            text-align: center;
         }
         nav {
             margin: 10px 0;
         }
         nav a {
             margin: 0 15px;
-            color: #35424a;
+            color: #ffffff;
             text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #1e2a30;
+            transform: scale(1.1);
         }
         .container {
             width: 80%;
@@ -36,95 +52,227 @@
             color: white;
             text-align: center;
             padding: 10px 0;
-            position: relative;
-            bottom: 0;
             width: 100%;
         }
         .content {
             padding: 20px;
             background: white;
             margin: 20px 0;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .content {
+            padding: 20px;
+            background: linear-gradient(to bottom, white, #f0f0f0); /* 漸變效果 */
+            margin: 20px 0;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+
+        .content:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .image-gallery img {
+            max-width: 200px;
+            height: auto;
+            border-radius: 8px;
+        }
+        /* 特別處理'服務圖像5'和'服務圖像9' */
+        .image-gallery img[alt="服務圖像5"],
+        .image-gallery img[alt="服務圖像9"] {
+            max-width: 600px; /* 稍微拉寬 */
+        }
+        /* 特別處理'服務圖像6'和'服務圖像8' */
+        .image-gallery img[alt="服務圖像6"],
+        .image-gallery img[alt="服務圖像8"] {
+            max-width: 300px; /* 稍微拉寬 */
+        }
+        /* 特別處理'服務圖像1'和'服務圖像2'和'服務圖像3' */
+        .image-gallery img[alt="服務圖像1"],
+        .image-gallery img[alt="服務圖像2"],
+        .image-gallery img[alt="服務圖像3"] {
+            max-width: 220px; /* 將寬度縮小 */
+            max-height: 250; /* 將高度縮小 */
+        }
+        .form-container {
+            padding: 20px;
+            background: #f0f0f0; /* 更淺的灰色 */
+            border-radius: 8px;
+            display: inline-block;
+            text-align: left;
+        }
+        .form-container label {
+            display: inline-block;
+            width: 100px;
+
+        
+        }
+        h2 {
+            font-size: 1.6em; /* 稍微加大字體 */
+            font-weight: bold; /* 設為粗體 */
+        }
+        p {
+            font-size: 1.2em; /* 字體稍微加大 */
+        }
+        .fixed-text {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+            input[type="submit"],
+            input[type="reset"] {
+                background-color: #35424a; /* 按鈕背景色 */
+                color: white; /* 字體顏色 */
+                padding: 10px 20px; /* 內邊距 */
+                border: none; /* 去除邊框 */
+                border-radius: 5px; /* 邊角圓滑 */
+                cursor: pointer; /* 游標樣式 */
+                transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* 增加陰影效果的過渡 */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加陰影效果 */
+            }
+
+            input[type="submit"]:hover,
+            input[type="reset"]:hover {
+                background-color: #1e2a30; /* 滑鼠懸停時的背景色 */
+                transform: scale(1.05); /* 滑鼠懸停時的放大效果 */
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* 懸停時加強陰影效果 */
+            }
+
+            input[type="submit"],
+            input[type="reset"] {
+                background: linear-gradient(to right, #35424a, #1e2a30); /* 漸變效果 */
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            input[type="submit"]:hover,
+            input[type="reset"]:hover {
+                background: linear-gradient(to right, #1e2a30, #35424a); /* 滑鼠懸停時的漸變效果 */
+                transform: scale(1.05);
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            }
+
+
+        
         }
     </style>
 </head>
 <body>
 
-<h1>
-    <a href="https://www.instagram.com/ahhshiit12/">Pinhua Photography</a><br/><br/>
-    
-</h1>
-
-<table border="10"> <!-- 產生一表格-->
-    <tr> <!-- 產生一列-->
-        
-    </tr>
-    <tr> <!-- 產生一列-->
-        <td>姓名:</td><td>Pinhua</td><td>服務:</td><td colspan="2">人車靜態攝影</td>
-        
-    </tr>
-    <tr> <!-- 產生一列-->
-        <td>instagram:</td><td>Ahhshiit12</td><td>Mail:</td><td colspan="2">Nf3xedk12@gmail.com</td>
-        
-    </tr>
-    <tr> <!-- 產生一列-->
-        <td>假別:</td><td colspan="3">事假</td>
-    </tr>
-
-    <tr> <!-- 產生一列-->
-        <td>請假事由:</td><td colspan="3">拍攝</td>
-    </tr>
-
-    <tr> <!-- 產生一列-->
-        <td>請假日期:</td>
-        <td colspan="3" rowspan="2">2024/0926 第1節起至2024/09/26第一節止</td>
-    
-    </tr>
-
-    <tr> <!-- 產生一列-->
-        <td>請假天數:</td>
-    </tr>
-
-    <tr> <!-- 產生一列-->
-        <td>節次明細:</td><td colspan="3">2024/0926(四):1</td>
-    </tr>
-
-    <tr> <!-- 產生一列-->
-        <td>核准情形:</td><td></td><td>最後編輯:</td><td rowspan="2"></td>
-    </tr>
-   
+    <header style="background-color: gray;">
+        <br style="margin-bottom: 40px; width: 150%;">P i n h u a </br>P h o t o g r a p h y</h1>
+        <p style="font-weight: bold;">Since 2024.04</p>
+        <nav>
+            <a href="#about" style="font-weight:bold;">關於我</a>
+            <a href="#services" style="font-weight:bold;">服務</a>
+            <a href="#pricing" style="font-weight:bold;">拍攝表單</a>
+            <a href="#contact" style="font-weight:bold;">聯絡</a>
+        </nav>
+    </header>
     
     
-</table>
 
-<header></P></P>Pinhua Photography</h1>
-    <nav>
-        <a href="#about">關於我</a>
-        <a href="#services">服務</a>
-        <a href="#contact">聯絡</a>
-    </nav>
-</header>
-
-<div class="container">
-    <div id="about" class="content">
-        <h2>關於我</h2>
-        <p>我叫Pinhua 來自基隆。專攻四輪和二輪靜態攝影,喜歡捕捉汽車和機車的美感與細節,透過鏡頭展現它們的靜態之美,有攝影需求歡迎聯絡 。</p>
+    <div class="fixed-text">
+        Instagram : Ahhshiit12
     </div>
 
-    <div id="services" class="content">
-        <h2>服務</h2>
-        <p>｜四輪、二輪｜人車靜態攝影｜人像拍攝｜。</p>
+    <div id="pricing" class="content" style="font-family: 'Yu Gothic Light'; font-weight: 600; background: linear-gradient(to bottom, whitesmoke, lightgray);">
+        <div id="about" class="content" style="margin-bottom: 0;">
+            <h2>關於我</h2>
+            <p>我叫Pinhua，來自基隆。專攻四輪和二輪靜態、動態攝影。<br/>喜歡捕捉汽車和機車的美感與細節，透過鏡頭展現它們的靜態之美。歡迎有任何攝影需求聯絡我。</p>
+            <div class="image-gallery">
+                <img src="images/a.jpg" alt="服務圖像1">
+                <img src="images/g.jpg" alt="服務圖像2">
+                <img src="images/v.jpg" alt="服務圖像3">
+            </div>
+        </div>
+    </div>
+    
+    <div id="pricing" class="content" style="font-family: 'Yu Gothic Light'; font-weight: 600; background: linear-gradient(to bottom, whitesmoke, lightgray);">
+
+        <div style="background-color: white; padding: 20px; border-radius: 8px;">
+            <h2>服務</h2>
+            <p>｜四輪、二輪｜動態攝影｜靜態攝影｜人像拍攝｜</p>
+            <div class="image-gallery">
+                <img src="images/r7.jpg" alt="服務圖像5">
+                <img src="images/23.jpg" alt="服務圖像6">
+                <img src="images/29.jpg" alt="服務圖像8">
+                <img src="images/3-.jpg" alt="服務圖像9">
+            </div>
+        </div>
+        
+    
+        <!DOCTYPE html>
+    <html lang="zh-TW">
+    <head>
+    <meta charset="UTF-8">
+    <title>拍攝表單</title>
+    </head>
+    <body>
+        <div id="pricing" class="content" style="font-family: 'Yu Gothic Light'; font-weight: 600; background: linear-gradient(to bottom, white, whitesmoke);">
+        <h2 h2>拍攝表單</h2>
+        <div class="form-container" style="background-color: white; padding: 20px; border-radius: 5px;">
+            <form action="check.php" method="get">
+                <fieldset>
+                    <center><legend>填表人資訊</legend></center>
+                    <label>性別:</label><br/>
+                    <input type="radio" name="gender" value="M"> 男生
+                    <input type="radio" name="gender" value="F" checked> 女生<br/><br/>
+                    <label>預約日期:</label><br/>
+                    <input type="date" name="account"/><br/><br/>
+                    <label>車型、車種:</label><br/>
+                    <input type="text" name="vehicle_type"/><br/><br/>
+                    <label>拍攝類別:</label><br/>
+                    <input type="radio" name="type" value="s"> 靜態攝影<br/>
+                    <input type="radio" name="type" value="d" checked> 動態攝影<br/><br/>
+                    <label>收費標準:</label><br/>
+                    <input type="radio" name="price" value="daily"> 靜態精修 30張$500<br/>
+                    <input type="radio" name="price" value="project"> 動態Rolling 10張$300<br/><br/>
+                    <input type="submit" value="提交"/>
+                    <input type="reset" value="重新輸入"/>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+
+        
+        
+        
+
+        <div id="contact" class="content">
+            <h2>聯絡我</h2>
+            <a href="https://www.instagram.com/ahhshiit12/">
+                <img src="images/1515.png" height="150" width="150" alt="Instagram"/>
+            </a>
+            <a href="https://www.google.com/intl/zh-TW_tw/gmail/about/">
+                <img src="images/1414.png" height="150" width="150" alt="Gmail"/>
+            </a><br/><br/>
+        </div>
     </div>
 
-    <div id="contact" class="content">
-        <h2>聯絡</h2>
-        <a href="https://www.instagram.com/ahhshiit12/">I n s t a g r a m</a><br/><br/>
-        <a href="https://www.google.com/intl/zh-TW_tw/gmail/about/">Nf3xedk12@gmail.com</a><br/><br/>
-    </div>
-</div>
-
-<footer>
-    <p>© 2024 Pinhua Photography.</p>
-</footer>
+    <footer>
+        <p>© 2024 Pinhua Photography.</p>
+    </footer>
 
 </body>
 </html>
